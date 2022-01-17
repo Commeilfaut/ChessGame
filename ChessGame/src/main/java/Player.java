@@ -53,6 +53,15 @@ public class Player {
         System.out.println("The rank of " + name + " was changed to " + rank);
     }
 
+    public void movePiece(Piece piece, Spot spot){
+
+        if (isWhite() != piece.isWhite()){
+            throw new IllegalArgumentException("incorrect piece color.Try again");
+        }
+        piece.setSpot(spot);
+        System.out.println("Piece" + piece.getName()  + " is moved to: " + spot);
+    }
+
     @Override
     public String toString() {
         return "Player{" +
